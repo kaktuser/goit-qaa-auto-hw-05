@@ -15,7 +15,7 @@ config:
       - expression: "http.request_rate >= 2 and http.response_time.max < 600"
 
   payload:
-    path: "payload.csv"
+    path: "post_data.csv"
     fields:
       - "foo1"
       - "foo2"
