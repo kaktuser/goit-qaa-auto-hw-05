@@ -14,6 +14,12 @@ config:
       - expression: vusers.failed == 0
       - expression: "http.request_rate >= 2 and http.response_time.max < 600"
 
+  payload:
+    path: "payload.csv"
+    fields:
+      - "foo1"
+      - "foo2"
+
 scenarios:
   - name: "Scenariusz testu obciążenia interfejsu API"
     flow:
@@ -35,9 +41,3 @@ scenarios:
               as: "hosting"
       - log: "Json value from response is: {{request_body}}"
       - log: "Host value from response is: {{hosting}}"
-
-    payload:
-      path: "payload.csv"
-      fields:
-        - "foo1"
-        - "foo2"
