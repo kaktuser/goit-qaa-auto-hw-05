@@ -1,0 +1,16 @@
+{
+  "name": "goit-qaa-auto-hw-05",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "loadtest": "artillery run artillery.yml"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "artillery": "^2.0.14"
+  }
+}
