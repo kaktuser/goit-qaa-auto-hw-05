@@ -1,8 +1,8 @@
 config:
   target: "https://postman-echo.com"
   phases:
-    - duration: 10
-      arrivalRate: 5
+    - duration: 1
+      arrivalRate: 1
       name: "Faza testu obciążeniowego"
   plugins:
     ensure: {}
@@ -28,6 +28,13 @@ scenarios:
           json:
             foo1: "{{ foo1 }}"
             foo2: "{{ foo2 }}"
+          capture:
+            - json: "$.json"
+              as: "request_body"
+            - json: "$.headers.host"
+              as: "hosting"
+      - log: "Json value from response is: {{request_body}}"
+      - log: "Host value from response is: {{hosting}}"
 
     payload:
       path: "payload.csv"
